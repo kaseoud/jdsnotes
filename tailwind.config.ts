@@ -12,7 +12,7 @@ const config: Config = {
         background: "#EEEBE7",
         foreground: "#1A1A1A",
         muted: "#666666",
-        accent: "#8B4513", // Subtle burnt sienna accent
+        accent: "#8B4513",
         "accent-light": "#D2691E",
       },
       fontFamily: {

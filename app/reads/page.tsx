@@ -4,106 +4,11 @@ import BookCard from "@/components/BookCard";
 export default function ReadsPage() {
   const books = [
     {
-      title: "Man's Search for Meaning",
-      author: "Victor Frankl",
-      image: "/book1.jpg",
-      rotation: -3,
-      scale: 0.98,
-      showTitle: true
-    },
-    {
-      title: "The God of Small Things",
-      author: "Arundhati Roy",
-      image: "/book2.jpg",
-      rotation: 2,
-      scale: 1,
-      showTitle: true
-    },
-    {
-      title: "Shoe Dog",
-      author: "Phil Knight",
-      image: "/book3.jpg",
-      rotation: -1,
-      scale: 0.95,
-      showTitle: true
-    },
-    {
-      title: "Good Energy",
-      author: "Casey Means",
-      image: "/book4.jpg",
+      title: "Greenlights",
+      author: "Matthew McConaughey",
+      image: "/book12.jpg",
       rotation: 4,
-      scale: 1.02,
-      showTitle: true
-    },
-    {
-      title: "The Beginning of Infinity",
-      author: "David Deutsch",
-      image: "/book5.jpg",
-      rotation: -2,
-      scale: 1,
-      showTitle: true
-    },{
-        title: "Bare Essentials",
-        author: "Dieter Brandes",
-        image: "/book11.jpg",
-        rotation: -2,
-        scale: 1.03,
-        showTitle: true
-      },
-      {
-        title: "Greenlights",
-        author: "Matthew McConaughey",
-        image: "/book12.jpg",
-        rotation: 4,
-        scale: 0.98,
-        showTitle: true
-      },
-      {
-        title: "Hillbilly Elegy",
-        author: "J.D. Vance",
-        image: "/book13.jpg",
-        rotation: -3,
-        scale: 1,
-        showTitle: true
-      },
-      {
-        title: "Outlive",
-        author: "Peter Attia",
-        image: "/book14.jpg",
-        rotation: 3,
-        scale: 0.97,
-        showTitle: true
-      },
-    {
-      title: "The Stranger",
-      author: "Albert Camus",
-      image: "/book6.jpg",
-      rotation: 3,
-      scale: 0.97,
-      showTitle: true
-    },
-    {
-      title: "The White Tiger",
-      author: "Aravind Adiga",
-      image: "/book7.jpg",
-      rotation: -4,
-      scale: 1.01,
-      showTitle: true
-    },
-    {
-      title: "The Design of Everyday Things",
-      author: "Don Norman",
-      image: "/book8.jpg",
-      rotation: 2,
-      scale: 0.99,
-      showTitle: true
-    },
-    {
-      title: "Elon Musk",
-      author: "Walter Isaacson",
-      image: "/book9.jpg",
-      rotation: -3,
-      scale: 1,
+      scale: 0.98,
       showTitle: true
     },
     {
@@ -115,31 +20,37 @@ export default function ReadsPage() {
       showTitle: true
     },
     {
-      title: "The Alchemist",
-      author: "Paulo Coelho",
-      image: "/book15.jpg",
-      rotation: 3,
-      scale: 0.97,
+      title: "When Breath Becomes Air",
+      author: "Paul Kalanithi",
+      image: "/book1.jpg",
+      rotation: -3,
+      scale: 0.98,
       showTitle: true
     },
     {
-      title: "The Subtle Art of Not Giving a F*",
-      author: "Mark Manson",
-      image: "/book16.jpg",
-      rotation: 3,
-      scale: 0.97,
+      title: "Permanent Record",
+      author: "Edward Snowden",
+      image: "/book2.jpg",
+      rotation: 2,
+      scale: 1,
       showTitle: true
-    }
+    },
+    {
+      title: "Elon Musk",
+      author: "Walter Isaacson",
+      image: "/book9.jpg",
+      rotation: -3,
+      scale: 1,
+      showTitle: true
+    },
   ];
 
   return (
     <Section>
       <div className="mb-10 md:mb-12">
         <h1 className="text-3xl md:text-5xl font-serif mb-4">Reads</h1>
-        
       </div>
 
-      {/* Organic Book Grid - Natural, Disorderly Layout */}
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 md:gap-10 lg:gap-12 overflow-visible">
         {books.map((book, index) => (
           <div

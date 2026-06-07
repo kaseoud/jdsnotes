@@ -3,10 +3,10 @@
 import { useState, useRef, useEffect } from "react";
 
 const placesLived = [
-  { name: "Kerala, India", emoji: "🌴", vibe: "home home", x: 10 },
-  { name: "Vellore, India", emoji: "🎓", vibe: "undergrad years", x: 30 },
-  { name: "Durham, NC", emoji: "🏀", vibe: "duke days", x: 60 },
-  { name: "San Francisco, CA", emoji: "🌉", vibe: "home now", x: 90 },
+  { name: "Cairo, Egypt", emoji: "🏛️", vibe: "where it all started", x: 10 },
+  { name: "Montreal, Canada", emoji: "🎓", vibe: "mcgill years", x: 40 },
+  { name: "Dubai, UAE", emoji: "🌆", vibe: "deloitte days", x: 70 },
+  { name: "Riyadh, Saudi Arabia", emoji: "🌴", vibe: "home now", x: 90 },
 ];
 
 export default function AnimatedLogo() {
@@ -19,14 +19,12 @@ export default function AnimatedLogo() {
     e.preventDefault();
     if (!showPlaces) {
       setAnimating(true);
-      // Don't stop animation - let it stay at San Francisco
     } else {
       setAnimating(false);
     }
     setShowPlaces(!showPlaces);
   };
 
-  // Close modal when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (modalRef.current && !modalRef.current.contains(event.target as Node)) {
@@ -53,11 +51,9 @@ export default function AnimatedLogo() {
         onClick={handleClick}
       >
         <div className="relative">
-          {/* Main title */}
-          <h1 className="text-[22px] md:text-[2.5rem] font-serif leading-tight transition-all duration-300">
+          <h1 className="text-[22px] md:text-[2.0rem] font-serif leading-tight transition-all duration-300">
             <span className="relative inline-block">
-              Jaidev Jayakumar 
-              {/* Accent line under name */}
+              Karim Abouel Seoud
               <span 
                 className={`absolute -bottom-1 left-0 h-[2px] bg-accent transition-all duration-500 ${
                   isHovered ? 'w-full' : 'w-0'
@@ -66,16 +62,14 @@ export default function AnimatedLogo() {
             </span>
           </h1>
           
-          {/* Tagline appears on hover - hide on mobile */}
           <div className={`hidden md:block absolute -bottom-6 left-0 text-[10px] font-mono text-accent uppercase tracking-widest transition-all duration-300 ${
             isHovered ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-2'
           }`}>
-            improving healthcare by {'>'}=1%
+            AI strategy · public sector · GCC
           </div>
         </div>
       </div>
 
-      {/* Journey animation */}
       {showPlaces && (
         <div ref={modalRef} className="absolute top-full left-0 mt-8 w-[90vw] max-w-[550px] md:w-[550px] border border-foreground/10 bg-background shadow-lg 
           animate-fadeIn z-50 p-4 md:p-6">
@@ -85,9 +79,7 @@ export default function AnimatedLogo() {
             </p>
           </div>
           
-          {/* Journey path visualization */}
           <div className="relative w-full h-[180px] mb-4">
-            {/* Wavy diagonal path with gradient */}
             <svg className="absolute inset-0 w-full h-full" viewBox="0 0 550 180" preserveAspectRatio="xMidYMid meet">
               <defs>
                 <linearGradient id="pathGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -103,29 +95,27 @@ export default function AnimatedLogo() {
               />
             </svg>
             
-            {/* City stops with emojis and vibes - using percentages for responsive scaling */}
             <div className="absolute" style={{ left: '5.5%', top: '83%' }}>
-              <span className="text-[20px]">🌴</span>
-              <div className="text-[9px] font-mono text-muted mt-1 whitespace-nowrap">Kerala, India</div>
-              <div className="text-[8px] font-mono text-muted/60 italic">home home</div>
+              <span className="text-[20px]">🏛️</span>
+              <div className="text-[9px] font-mono text-muted mt-1 whitespace-nowrap">Cairo, Egypt</div>
+              <div className="text-[8px] font-mono text-muted/60 italic">where it all started</div>
             </div>
             <div className="absolute" style={{ left: '27%', top: '56%' }}>
               <span className="text-[20px]">🎓</span>
-              <div className="text-[9px] font-mono text-muted mt-1 whitespace-nowrap">Vellore, India</div>
-              <div className="text-[8px] font-mono text-muted/60 italic">undergrad years</div>
+              <div className="text-[9px] font-mono text-muted mt-1 whitespace-nowrap">Montreal, Canada</div>
+              <div className="text-[8px] font-mono text-muted/60 italic">mcgill years</div>
             </div>
             <div className="absolute" style={{ left: '51%', top: '33%' }}>
-              <span className="text-[20px]">🏀</span>
-              <div className="text-[9px] font-mono text-muted mt-1 whitespace-nowrap">Durham, NC</div>
-              <div className="text-[8px] font-mono text-muted/60 italic">duke days</div>
+              <span className="text-[20px]">🌆</span>
+              <div className="text-[9px] font-mono text-muted mt-1 whitespace-nowrap">Dubai, UAE</div>
+              <div className="text-[8px] font-mono text-muted/60 italic">deloitte days</div>
             </div>
             <div className="absolute" style={{ left: '82%', top: '22%' }}>
-              <span className="text-[20px]">🌉</span>
-              <div className="text-[9px] font-mono text-muted mt-1 whitespace-nowrap">San Francisco</div>
+              <span className="text-[20px]">🌴</span>
+              <div className="text-[9px] font-mono text-muted mt-1 whitespace-nowrap">Riyadh, Saudi Arabia</div>
               <div className="text-[8px] font-mono text-muted/60 italic">home now</div>
             </div>
             
-            {/* Animated bike - follows the path exactly */}
             {animating && (
               <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 550 180" preserveAspectRatio="xMidYMid meet">
                 <text 
@@ -155,18 +145,11 @@ export default function AnimatedLogo() {
         </div>
       )}
       
-      {/* CSS for bike animation */}
       <style jsx>{`
         @keyframes bikeRide {
-          0% { 
-            offset-distance: 0%;
-          }
-          100% { 
-            offset-distance: 100%;
-          }
+          0% { offset-distance: 0%; }
+          100% { offset-distance: 100%; }
         }
-        
-        /* Convert viewBox coordinates to work with percentage-based path */
         svg {
           width: 100%;
           height: 100%;
@@ -175,4 +158,3 @@ export default function AnimatedLogo() {
     </div>
   );
 }
-
